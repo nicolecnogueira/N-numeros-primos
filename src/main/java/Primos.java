@@ -7,9 +7,28 @@ public class Primos {
             System.exit(0);
         }
         int qnt = Integer.parseInt(args[0]); //Converte para número a entrada
-        //TODO imprimir N primos
-        System.out.println("1");
-
+        int count = 0;
+        int num = 0;
+        
+        while(count < qnt) {
+        	if(isPrime(num)) {
+        		System.out.println(num);
+        		count++;
+        	}
+        	num++;
+        }
+        
+        
     }
-
+    public static boolean isPrime(int num) {
+    	if(num <= 1) {
+    		return false;
+    	}
+    	for(int i = 2; i <= Math.sqrt(num); i++) {
+    		if(num % i == 0) {
+    			return false;
+    		}
+    	}
+    	return true;
+    }
 }
